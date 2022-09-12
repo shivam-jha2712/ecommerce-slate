@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "panditji"
+    "name": "ecommerce"
   },
   "api": {
-    "projectId": "6b8qvgbp",
+    "projectId": "rm1w3ws7",
     "dataset": "production"
   },
   "plugins": [
