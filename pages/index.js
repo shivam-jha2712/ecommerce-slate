@@ -24,7 +24,7 @@ const Home = ({ products, bannerData }) => (// data here is passed which is pass
       {/* In products?.map((product) =>product), ?.map is used to identify and map that there is a product there */}
     </div>
 
-    <FooterBanner />
+    <FooterBanner footerBanner={bannerData && bannerData[0]} />
 
   </div>
 
