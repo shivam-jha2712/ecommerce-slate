@@ -6,13 +6,15 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 
 import { Product } from '../../components';
 
+import { useStateContext } from '../../context/StateContext';
+
 // The question is that if the product is clicked how is it going to specify which product needs to be called whether a speakker is clicked or a headphones.
 
 // **For that we need to make an API call which we have already made in the case of getServerSideProps for all the function in the index.js file of this project
 const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
-
+    const { decQty, incQty, qty } = useStateContext();
 
     return (
         <div>
@@ -55,13 +57,13 @@ const ProductDetails = ({ product, products }) => {
                         <h3>Quanity:</h3>
                         <p className="quantity-desc">
                             <span className="minus" onClick="">
-                                <AiOutlineMinus />
+                                {decQty}<AiOutlineMinus />
                             </span>
                             <span className="num" onClick="">
-                                0
+                                {qty}
                             </span>
                             <span className="plus" onClick="">
-                                <AiOutlinePlus />
+                                {incQty}<AiOutlinePlus />
                             </span>
                         </p>
                     </div>
