@@ -6,7 +6,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 
 import { Product } from '../../components';
 
-import { useStateContext } from '../../context/StateContext';
+import { useStateContext } from '../../context/StateContext'; // this is for using the statreContext 
 
 // The question is that if the product is clicked how is it going to specify which product needs to be called whether a speakker is clicked or a headphones.
 
@@ -14,7 +14,7 @@ import { useStateContext } from '../../context/StateContext';
 const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
-    const { decQty, incQty, qty } = useStateContext();
+    const { decQty, incQty, qty, onAdd } = useStateContext(); // using this as a hook to fetch the functionality mentioned for the folllowing in useStateContext
 
     return (
         <div>
@@ -56,19 +56,19 @@ const ProductDetails = ({ product, products }) => {
                     <div className="quantity">
                         <h3>Quanity:</h3>
                         <p className="quantity-desc">
-                            <span className="minus" onClick="">
-                                {decQty}<AiOutlineMinus />
+                            <span className="minus" onClick={decQty}>
+                                <AiOutlineMinus />
                             </span>
                             <span className="num" onClick="">
                                 {qty}
                             </span>
-                            <span className="plus" onClick="">
-                                {incQty}<AiOutlinePlus />
+                            <span className="plus" onClick={incQty}>
+                                <AiOutlinePlus />
                             </span>
                         </p>
                     </div>
                     <div className="buttons">
-                        <button type="button" className="add-to-cart" onClick="">Add To Cart</button>
+                        <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add To Cart</button>
                         <button type="button" className="buy-now" onClick="">Buy Now</button>
                     </div>
                 </div>
