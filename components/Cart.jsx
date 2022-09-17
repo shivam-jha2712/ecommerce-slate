@@ -6,31 +6,33 @@ import toast from 'react-hot-toast';
 
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
-// import getStripe from '../lib/getStripe';
+import getStripe from '../lib/getStripe';
 
 const Cart = () => {
     const cartRef = useRef();
     const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
 
-    // const handleCheckout = async () => {
-    //     const stripe = await getStripe();
+    const handleCheckout = async () => {
+        const stripe = await getStripe();
+        // Creating an API request from our very own backend available in the api section from stripe.js
+        const response = await fetch('/api/stripe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(cartItems),
+            // Unknown just copied code
+        });
 
-    //     const response = await fetch('/api/stripe', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(cartItems),
-    //     });
+        if (response.statusCode === 500) return;
 
-    //     if (response.statusCode === 500) return;
+        const data = await response.json();
 
-    //     const data = await response.json();
+        toast.loading('Redirecting...');
 
-    //     toast.loading('Redirecting...');
-
-    //     stripe.redirectToCheckout({ sessionId: data.id });
-    // }
+        stripe.redirectToCheckout({ sessionId: data.id });
+        // this is done for when just in case if the user wants to go back and even if he/she comes back for making the purchase they can make the purchase some time later
+    }
 
     return (
         <div className="cart-wrapper" ref={cartRef}>
@@ -102,7 +104,7 @@ const Cart = () => {
                             <h3>₹{totalPrice}</h3>
                         </div>
                         <div className="btn-container">
-                            <button type="button" className="btn" onClick="">
+                            <button type="button" className="btn" onClick={handleCheckout}>
                                 Pay with Stripe
                             </button>
                         </div>
