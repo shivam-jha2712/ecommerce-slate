@@ -13,6 +13,12 @@ This App mainly focuses on buying similar kind of products like Boat HeadPhones 
 - Since Stripe asks for money I have a semi hosted website which can lead you untill the payement of the product and tells you about the features just before the payement is commenced.
 - https://ecommerce-boat-headphones.netlify.app/
 
+#### Demo payement technique 
+- Use "4242 4242 4242 4242" as card number
+- Use "04 / 24" as Date
+- Use "424" as CVV
+- Note: This is a demo site thus does not charges you any money
+
 
 <p align="center" width="1248" height="702">
   https://www.loom.com/share/921ea07093c54fe1bff0bfa1d3572dd5
