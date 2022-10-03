@@ -14,8 +14,6 @@ This App mainly focuses on buying similar kind of products like Boat HeadPhones 
 - https://ecommerce-boat-headphones.netlify.app/
 
 
--Due to the existence of the Stripe it is not enabling to host in on the site it asks for a cost. But in local host it works very fine so I present you a linked working video for the site.
-
 <p align="center" width="1248" height="702">
   https://www.loom.com/share/921ea07093c54fe1bff0bfa1d3572dd5
 </p>
