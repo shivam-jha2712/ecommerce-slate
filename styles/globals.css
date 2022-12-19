@@ -220,6 +220,7 @@ text-align: end;
   color: white;
   width: 100%;
   margin-top: 120px;
+  z-index: 2;
 }
 .banner-desc{
   display: flex ;
@@ -240,6 +241,7 @@ text-align: end;
   font-weight: 900;
   font-size: 80px;
   margin-left: 25px;
+  z-index: 2;
 }
 .banner-desc .left p{
   margin:18px;
@@ -248,8 +250,9 @@ text-align: end;
   position: absolute;
   /* top: -35%;
   left: 8%; */
-  top: -25%;
+  top: -18%;
   left: 25%;
+  z-index: -1;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -637,6 +640,7 @@ margin-top: 160px;
     left: 30%;
     top: 6%;
     height: 56%
+    
   }
   .banner-desc .left h3{
     font-weight: 900;
