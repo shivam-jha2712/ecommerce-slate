@@ -16,7 +16,7 @@ const Navbar = () => {
             <p className="logo">
                 <a href="/">Boat HeadPhones</a>
             </p>
-
+{/* Search Bar Frontend */}
             <section className="search-navbar">
                 <input type="text" placeholder="Search for products" />
                 <button type="button">Search</button>
