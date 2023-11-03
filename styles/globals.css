@@ -765,3 +765,43 @@ margin-top: 160px;
   margin: auto;
 }
 }
+
+/* Seach bar for home screen */
+.search-navbar {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-navbar input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 300px;
+  font-size: 16px;
+  background-color: #e0e0e0;
+}
+
+.search-navbar input[type="text"]::placeholder {
+  color: #888;
+}
+
+.search-navbar button {
+  background: linear-gradient(to right, #ff3333, #ff3333);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.search-navbar button:hover {
+  background: linear-gradient(to right, #fd4e4e, #e11010);
+}
+

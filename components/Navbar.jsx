@@ -17,6 +17,11 @@ const Navbar = () => {
                 <a href="/">Boat HeadPhones</a>
             </p>
 
+            <section className="search-navbar">
+                <input type="text" placeholder="Search for products" />
+                <button type="button">Search</button>
+            </section>
+
             <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
                 <AiOutlineShopping />
                 <span className="cart-item-qty">{totalQuantities}</span>
